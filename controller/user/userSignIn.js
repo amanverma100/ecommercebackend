@@ -32,7 +32,9 @@ async function userSignInController(req,res){
 
         const tokenOption = {
             httpOnly : true,
-            expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000)
+            expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+            secure: true,   // Ensures cookies are sent only over HTTPS
+             sameSite: 'None'
         }
         
         res.cookie("token",token,tokenOption).status(200).json({
