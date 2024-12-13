@@ -5,7 +5,7 @@ require('dotenv').config()
 const connectDB = require('./config/db')
 const router = require('./routes')
 const app = express()
-const allowedOrigins = ["http://localhost:3000"];
+const allowedOrigins = ["https://ecomfrontend1.vercel.app"];
 app.use(cookieParser());
 app.use(cors({
   origin: (origin, callback) => {
